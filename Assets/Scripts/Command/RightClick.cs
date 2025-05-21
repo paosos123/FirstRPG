@@ -44,7 +44,7 @@ public class RightClick : MonoBehaviour
         Ray ray = cam.ScreenPointToRay(screenPos);
         RaycastHit hit;
 
-        //if we left-click something
+        //If we left-click something
         if (Physics.Raycast(ray, out hit, 1000, layerMask))
         {
             switch (hit.collider.tag)
@@ -52,8 +52,11 @@ public class RightClick : MonoBehaviour
                 case "Ground":
                     CommandToWalk(hit, PartyManager.instance.SelectChars);
                     break;
-                case  "Enemy":
+                case "Enemy":
                     CommandToAttack(hit, PartyManager.instance.SelectChars);
+                    break;
+                case "NPC":
+                    CommandTalkToNPC(hit, PartyManager.instance.SelectChars);
                     break;
             }
         }
@@ -75,5 +78,15 @@ public class RightClick : MonoBehaviour
         {
             h.ToAttackCharacter(target);
         }
+    }
+    private void CommandTalkToNPC(RaycastHit hit, List<Character> heroes)
+    {
+        Character npc = hit.collider.GetComponent<Character>();
+        Debug.Log("Talk to NPC: " + npc);
+
+        if (heroes.Count <= 0)
+            return;
+
+        heroes[0].ToTalkToNPC(npc);
     }
 }
