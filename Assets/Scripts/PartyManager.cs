@@ -10,6 +10,10 @@ public class PartyManager : MonoBehaviour
     private List<Character> selectChars = new List<Character>();
     public List<Character> SelectChars { get { return selectChars; } }
 
+    [SerializeField]
+    private List<Quest> questList = new List<Quest>();
+    public List<Quest> QuestList { get { return questList; } }
+    
     public static PartyManager instance;
     void Awake()
     {
@@ -27,7 +31,7 @@ public class PartyManager : MonoBehaviour
 
         members[0].MagicSkills.Add(new Magic(VFXManager.instance.MagicData[0]));
         //members[1].MagicSkills.Add(new Magic(VFXManager.instance.MagicData[1]));
-
+        InventoryManager.instance.AddItem(members[0], 0);
         InventoryManager.instance.AddItem(members[0], 1);//Health Potion
         InventoryManager.instance.AddItem(members[0], 2);//Sword
         InventoryManager.instance.AddItem(members[0], 3);//Sword
