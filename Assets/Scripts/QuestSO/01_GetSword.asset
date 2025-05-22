@@ -10,25 +10,25 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 70cdbd3336fa7ea4ea72483a42f1aec4, type: 3}
-  m_Name: 00_GetMePotion
+  m_Name: 01_GetSword
   m_EditorClassIdentifier: 
-  questId: 0
+  questId: 1
   type: 0
   status: 0
-  questName: Get Me a Potion
-  questDetail: 'Give Ben a bottle of health '
-  questItemId: 0
+  questName: Get Me a Sword
+  questDetail: Give Ben a Sword
+  questItemId: 1
   questDialogue:
   - Hi,adventure,How are you?
-  - Can I ask ypu something?
-  - I need a blue health potion.
+  - Can I ask you something?
+  - I need a Sword.
   answerNext:
   - Hi, nice to meet you
   - Go ahead.
   answerAccept: Yes. I will find
   answerReject: Sorry, I couldn't help you
-  rewardItemId: 5
+  rewardItemId: 2
   rewardExp: 150
-  questionInProgress: Have you gotten any blue potion?
+  questionInProgress: Have you gotten any Sword?
   answerFinish: Here it is.
   answerNotFinish: Not yet
