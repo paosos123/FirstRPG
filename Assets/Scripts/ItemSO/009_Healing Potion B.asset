@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2f9d775b07c3d0e4e8a8180db28b8fdf, type: 3}
-  m_Name: 004_ShieldB
+  m_Name: 009_Healing Potion B
   m_EditorClassIdentifier: 
-  id: 5
-  itemName: Shield B
-  type: 2
-  icon: {fileID: 21300000, guid: 98498b833764267479a46aed6f7f8e05, type: 3}
-  power: 6
-  perfabID: 5
-  normalPrice: 160
+  id: 10
+  itemName: Healing Potion B
+  type: 0
+  icon: {fileID: 21300000, guid: b56f614a2b238b948a4fc4ccc4e7e8b0, type: 3}
+  power: 30
+  perfabID: 10
+  normalPrice: 60
