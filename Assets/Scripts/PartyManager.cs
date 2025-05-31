@@ -96,16 +96,26 @@ public class PartyManager : MonoBehaviour
 
     public void UnSelectSingleHeroByToggle(int i)
     {
-        if (selectChars.Count <= 1)
+       /* if (selectChars.Count <= 1)
         {
             UIManager.instance.ToggleAvatar[i].isOn = true;
             return;
-        }
+        }*/
 
         if (selectChars.Contains(members[i]))
         {
             selectChars.Remove(members[i]);
             members[i].ToggleRingSelection(false);
         }
+    }
+    public void RemoveHeroFromParty(int id)
+    {
+        if (id == -1 || id == 0)
+            return;
+
+        if (selectChars.Contains(members[id]))
+            selectChars.Remove(members[id]);
+
+        members.Remove(members[id]);
     }
 }

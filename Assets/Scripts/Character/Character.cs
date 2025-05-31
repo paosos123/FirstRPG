@@ -62,6 +62,10 @@ public abstract class Character : MonoBehaviour
     public float FindingRange { get { return findingRange; } }
     [SerializeField]
     protected int attackDamage = 3;
+    public int AttackDamage
+    {
+        get { return attackDamage; }
+    }
     [SerializeField]
     protected float attackCoolDown = 2f;
 
@@ -106,6 +110,7 @@ public abstract class Character : MonoBehaviour
 
     [SerializeField]
     protected int defensePower = 0;
+    public int DefensePower { get { return defensePower; } }
     protected UIManager uiManager;
     protected VFXManager vfxManager;
     protected InventoryManager invManager;
@@ -368,6 +373,7 @@ public abstract class Character : MonoBehaviour
         shieldObj.transform.localPosition = new Vector3(-8.5f, -4f, 3f);
         shieldObj.transform.Rotate(-90f, 0f, 180f, Space.Self);
         attackPower += item.Power;
+        attackDamage += attackPower;
         mainWeapon = item; // สมมติว่ามีตัวแปร mainWeapon ในคลาสนี้
     }
 
@@ -376,6 +382,7 @@ public abstract class Character : MonoBehaviour
         if (mainWeapon != null)
         {
             attackPower -= mainWeapon.Power;
+            attackDamage -= attackPower;
             mainWeapon = null;
             Destroy(weaponObj);
         }
