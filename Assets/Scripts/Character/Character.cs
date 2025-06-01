@@ -114,17 +114,19 @@ public abstract class Character : MonoBehaviour
     protected UIManager uiManager;
     protected VFXManager vfxManager;
     protected InventoryManager invManager;
+    protected PartyManager partyManager;
     void Awake()
     {
         navAgent = GetComponent<NavMeshAgent>();
         anim = GetComponent<Animator>();
     }
-    public void charInit(VFXManager vfxM, UIManager uiM, InventoryManager invM)
+    public void CharInit(VFXManager vfxM, UIManager uiM, InventoryManager invM,PartyManager partyM)
     {
         vfxManager = vfxM;
         uiManager = uiM;
         invManager = invM;
-
+        partyManager = partyM;
+        
         inventoryItems = new Item[InventoryManager.MAXSLOT];
     }
     public void SetState(CharState s)

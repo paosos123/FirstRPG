@@ -2970,7 +2970,7 @@ MonoBehaviour:
   charName: Saran
   state: 0
   ringSelection: {fileID: 4935454091094064017}
-  curHP: 10
+  curHP: 100
   maxHP: 100
   curCharTarget: {fileID: 0}
   attackRange: 2
@@ -2998,6 +2998,7 @@ MonoBehaviour:
     icon: {fileID: 0}
     power: 0
     prefabID: 0
+    normalPrice: 0
   weaponHand: {fileID: 496550}
   weaponObj: {fileID: 0}
   attackPower: 0
@@ -3008,17 +3009,19 @@ MonoBehaviour:
     icon: {fileID: 0}
     power: 0
     prefabID: 0
+    normalPrice: 0
   shieldHand: {fileID: 483062}
   shieldObj: {fileID: 0}
   defensePower: 0
   exp: 0
-  level: 0
-  strength: 0
-  dexterity: 0
-  constitution: 0
-  intelligence: 0
-  wisdom: 0
-  charisma: 0
+  level: 1
+  nextExp: 30
+  strength: 1
+  dexterity: 1
+  constitution: 1
+  intelligence: 1
+  wisdom: 1
+  charisma: 1
 --- !u!114 &7947259188056865790
 MonoBehaviour:
   m_ObjectHideFlags: 0

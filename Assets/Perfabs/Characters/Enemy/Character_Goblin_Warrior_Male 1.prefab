@@ -579,6 +579,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d6415bf3ed90214699f817a578e692c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  avatarPic: {fileID: 0}
+  charName: 
   state: 0
   ringSelection: {fileID: 0}
   curHP: 10
@@ -609,6 +611,10 @@ MonoBehaviour:
     icon: {fileID: 0}
     power: 0
     prefabID: 0
+    normalPrice: 0
+  weaponHand: {fileID: 0}
+  weaponObj: {fileID: 0}
+  attackPower: 0
   shield:
     id: 0
     itemName: 
@@ -616,9 +622,11 @@ MonoBehaviour:
     icon: {fileID: 0}
     power: 0
     prefabID: 0
+    normalPrice: 0
   shieldHand: {fileID: 444796}
   shieldObj: {fileID: 0}
   defensePower: 0
+  expDrop: 30
 --- !u!114 &-8872399744934541011
 MonoBehaviour:
   m_ObjectHideFlags: 0

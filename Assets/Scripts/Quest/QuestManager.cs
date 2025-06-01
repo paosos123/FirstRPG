@@ -29,10 +29,16 @@ public class QuestManager : MonoBehaviour
         Quest quest = new Quest(questData);
         npc.QuestToGive.Add(quest);
     }
-
+    
 // Start is called once before the first execution of Update after the MonoBehaviour
     void Start()
     {
+
+        foreach (Character npc in npcPerson)
+        {
+            npc.CharInit(VFXManager.instance, UIManager.instance,InventoryManager.instance,PartyManager.instance);
+        }
+        
         AddQuestToNPC(npcPerson[0], questData[0]); //Give Golem - Give Potion Quest
     }
     public Quest CheckForQuest(Npc npc, QuestStatus status)

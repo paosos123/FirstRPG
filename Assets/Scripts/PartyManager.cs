@@ -17,7 +17,8 @@ public class PartyManager : MonoBehaviour
     [SerializeField]
     private int partyMoney = 1000;
     public int PartyMoney { get { return partyMoney; } set { partyMoney = value; } }
-    
+
+    [SerializeField] private int totalExp;
     public static PartyManager instance;
     void Awake()
     {
@@ -28,7 +29,7 @@ public class PartyManager : MonoBehaviour
     {
         foreach (Character c in members)
         {
-            c.charInit(VFXManager.instance, UIManager.instance,InventoryManager.instance);
+            c.CharInit(VFXManager.instance, UIManager.instance,InventoryManager.instance,this);
         }
 
         SelectSingleHero(0);
@@ -40,11 +41,11 @@ public class PartyManager : MonoBehaviour
         InventoryManager.instance.AddItem(members[0], 2);//Sword
         InventoryManager.instance.AddItem(members[0], 3);//Sword
         InventoryManager.instance.AddItem(members[0], 4);//Shield
-       // InventoryManager.instance.AddItem(members[1], 0);//Health Potion
+       /* InventoryManager.instance.AddItem(members[1], 0);//Health Potion
         //InventoryManager.instance.AddItem(members[1], 1);//Sword
         //InventoryManager.instance.AddItem(members[1], 2);//Shield
         //InventoryManager.instance.AddItem(members[1], 3);//Shield
-        UIManager.instance.ShowMagicToggles();
+        UIManager.instance.ShowMagicToggles();*/
     }
 
     // Update is called once per frame
@@ -121,5 +122,24 @@ public class PartyManager : MonoBehaviour
             selectChars.Remove(members[id]);
 
         members.Remove(members[id]);
+    }
+    public void DistributeTotalExp(int n)
+    {
+        totalExp = n;
+        int eachHeroExp = totalExp / members.Count;
+
+        foreach (Hero hero in members)
+            hero.ReceiveExp(eachHeroExp);
+    }
+    public bool HeroJoinParty(Character hero)
+    {
+        if (members.Count >= 6)
+            return false;
+
+        hero.CharInit(VFXManager.instance, UIManager.instance,
+            InventoryManager.instance, this);
+
+        members.Add(hero);
+        return true;
     }
 }
